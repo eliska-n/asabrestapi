@@ -1,6 +1,7 @@
 import asab
 import asab.web.rest
 
+
 class CRUDWebHandler(object):
     def __init__(self, app, mongo_svc):
         self.CRUDService = mongo_svc
@@ -51,7 +52,7 @@ class CRUDWebHandler(object):
         key = request.match_info["id"]
 
         result = await self.CRUDService.update(collection, key, json_data)
-        if result:
+        if result == "OK":
             return asab.web.rest.json_response(request, {"result": "OK"})
         else:
             asab.web.rest.json_response(request, {"result": "FAIL"})

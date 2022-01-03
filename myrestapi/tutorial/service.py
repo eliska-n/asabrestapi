@@ -23,6 +23,7 @@ class CRUDService(asab.Service):
         # our app by its service name.
         self.MongoDBStorageService = app.get_service("asab.StorageService")
 
+
     # Below, we define class methods, that our handler will use to provide the desired functionality,
     # requested by our microservice users. These may not be limited to the methods tied to the handler's
     # CRUD functionality directly (e.g. the create, read, update and delete methods), but also any other
